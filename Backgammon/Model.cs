@@ -8,6 +8,9 @@ namespace Backgammon
 {
     class Model
     {
+        private bool _d1 = false;
+        private bool _d2 = false;
+        
         public static bool ModelSelftest()
         {
             return false;
@@ -38,8 +41,14 @@ namespace Backgammon
         private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
         {
             
-            return "str";
-
+            if (!_d1)
+            {
+                // Lägger till positionen för d1 i en string
+            }
+            if (!_d2)
+            {
+                // Lägger till positionen för d2 i samma string
+            }
         }
 
         // Retunerar ett slumptal mellan 1-6
