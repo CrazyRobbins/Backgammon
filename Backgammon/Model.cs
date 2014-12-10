@@ -13,10 +13,32 @@ namespace Backgammon
             return false;
         }
 
-        // Tar emot position och retunerar alla positioner som är giltiga
-        public int validMoves(int pos, int d1, int d2, Player player)
+        // Tar emot position och retunerar alla positioner som är giltiga i form av en string
+        // exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
+        public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
         {
-            return 0;
+            string str;
+
+            if (d1 == d2)
+            {
+                str = validMovesSame(pos, d1, turnPlayer, player2);
+            }
+            else
+            {
+                str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
+            }
+            return str;
+        }
+
+        private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
+        {
+
+        }
+
+        private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        {
+            string str;
+
         }
 
         // Retunerar ett slumptal mellan 1-6
@@ -71,10 +93,17 @@ namespace Backgammon
             return result;
         }
 
-        // Bricka blir tagen
-        public int brickTaken(Player player1, Player player2)
+        // Kontrollerar om turnPlayer slått ut en av player2's brickor
+        public void brickTaken(Player turnPlayer, Player player2)
         {
-            return 0;
+            for (int i = 0; i < 24; i++)
+            {
+                if ((turnPlayer._laces[i] == 1) && (player2._laces[i] == 1))
+                {
+                    player2._laces[i] = 0;
+                    player2._out++;
+                }
+            }
         }
     }
 }
