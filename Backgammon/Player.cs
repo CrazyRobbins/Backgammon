@@ -9,17 +9,14 @@ namespace Backgammon
     class Player
     {
         public int[] _laces;
-        private int _bricksAmount;
+        public int _bricksAmount;
+        public int _out;
 
         public Player()
         {
             _laces = new int[24];
             _bricksAmount = 15;
-        }
-
-        public int BricksAmount
-        {
-            get { return _bricksAmount; }
+            _out = 0;
         }
 
     }
