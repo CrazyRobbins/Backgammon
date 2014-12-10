@@ -23,12 +23,11 @@ namespace Backgammon
         Ellipse _pieceSelected = null;
         Point _posOfMouseOnHit;
         Point _posOfEllipseOnHit;
+        Brush strokeColor;
         
         public MainWindow()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();   
         }
 
         private void Canvas_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -40,6 +39,9 @@ namespace Backgammon
             if (obj is Ellipse)
             {
                 _pieceSelected = (Ellipse)obj;
+
+                strokeColor = _pieceSelected.Stroke;
+                _pieceSelected.Stroke = Brushes.Red;
                 
                 theCanvas.Children.Remove(_pieceSelected);
                 theCanvas.Children.Add(_pieceSelected);
@@ -62,6 +64,7 @@ namespace Backgammon
 
         private void Canvas_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
+            _pieceSelected.Stroke = strokeColor;
             _pieceSelected = null;
         }
     }
