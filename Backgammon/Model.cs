@@ -32,12 +32,13 @@ namespace Backgammon
 
         private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
         {
-
+            return "p";
         }
 
         private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
         {
-            string str;
+            
+            return "str";
 
         }
 
