@@ -17,6 +17,7 @@ namespace Backgammon
             _laces = new int[24];
             _bricksAmount = 15;
             _out = 0;
+            
         }
 
     }
