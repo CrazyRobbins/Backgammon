@@ -61,6 +61,7 @@ namespace Backgammon
             Point pt = e.GetPosition(theCanvas);
             HitTestResult hr = VisualTreeHelper.HitTest(theCanvas, pt);
             Object obj = hr.VisualHit;
+
             if (obj is Ellipse)
             {
                 _pieceSelected = (Ellipse)obj;
@@ -70,7 +71,7 @@ namespace Backgammon
 
                 Panel parentPanel = (Panel)_pieceSelected.Parent;
                 parentPanel.Children.Remove(_pieceSelected);
-                theCanvas.Children.Add(_pieceSelected);
+                parentPanel.Children.Add(_pieceSelected);
 
                 _posOfMouseOnHit = pt;
                 _posOfEllipseOnHit.X = Canvas.GetLeft(_pieceSelected);
@@ -90,25 +91,32 @@ namespace Backgammon
 
         private void Canvas_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
-            double newY = Canvas.GetTop(_pieceSelected);
-            double newX = Canvas.GetLeft(_pieceSelected);
-            if (!model.check(newY, newX, inActivePlayer))
-            {
-                Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
-                Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
-            }
-            else
-            {
-                model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
-            }
             if (_pieceSelected != null)
             {
+                double newY = Canvas.GetTop(_pieceSelected);
+                double newX = Canvas.GetLeft(_pieceSelected);
+                if (!model.check(newY, newX, inActivePlayer))
+                {
+                    Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
+                    Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
+                }
+                else
+                {
+                    model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
+                }
+
                 _pieceSelected.Stroke = strokeColor;
                 _pieceSelected = null;
             }
+        }
 
-          
-
+        private void diceRoll(object sender, RoutedEventArgs e)
+        {
+            int dice1, dice2;
+            dice1 = model.dice();
+            dice2 = model.dice();
+            DiceView.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice1.ToString() + ".png", UriKind.Relative));
+            DiceView2.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice2.ToString() + ".png", UriKind.Relative));
         }
     }
 }

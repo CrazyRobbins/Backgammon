@@ -109,8 +109,15 @@
                     </UniformGrid>
                    
                 </Grid>
-                <Grid Name="sideGrid" Grid.Column="1" Background="Aqua"></Grid>
+                <Grid Grid.Column="1" Background="Green">
+                    <Grid Name="WhiOut" Background="GreenYellow" Width="30" Height="100" Margin="24,220,24,0" ></Grid>
+                    <Grid Name="BlaOut" Background="GreenYellow" Width="30" Height="100" Margin="34,0,34,220" ></Grid>
+                    <Button x:Name="DiceRoll" Click="diceRoll" Width="60" Height="20" Margin="19,194,19,106" >Roll dice</Button>
+                    <Image Name="DiceView" Width="50" Height="50" Stretch="UniformToFill" Margin="-4,135,52,135"></Image>
+                    <Image Name="DiceView2" Width="50" Height="50" Stretch="UniformToFill" Margin="31,135,17,135"></Image>
+                </Grid>
             </Grid>
+           
             
             <!--Vita Brickor -->
             <local:BGPieceW Canvas.Left="1" Canvas.Top="0"/>
