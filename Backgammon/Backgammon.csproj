@@ -54,8 +54,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BGPieceB.xaml.cs">
+      <DependentUpon>BGPieceB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BGPieceW.xaml.cs">
+      <DependentUpon>BGPieceW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="View.cs" />
+    <Page Include="BGPieceB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BGPieceW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,14 +117,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Grafik\piece-black.jpg">
+    <Resource Include="Grafik\piece-black.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Grafik\piece-white.jpg">
+    <Resource Include="Grafik\piece-white.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

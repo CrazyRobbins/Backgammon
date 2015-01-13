@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Backgammon.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Backgammon"
         Title="MainWindow">
     <Viewbox Stretch="Fill">
         <Canvas Name="theCanvas" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" MouseUp="Canvas_MouseUp_1" Height="320" Width="490" Background="White">
@@ -11,7 +12,7 @@
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
                 
-                <Grid Name="mainGrid">
+                <Grid Name="mainGrid" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="50"/>
@@ -106,166 +107,44 @@
                             <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                         </Grid>
                     </UniformGrid>
+                   
                 </Grid>
+                <Grid Name="sideGrid" Grid.Column="1" Background="Aqua"></Grid>
             </Grid>
+            
             <!--Vita Brickor -->
-            <Ellipse Canvas.Left="52.5" Canvas.Top="10" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="35" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="60" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="85" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="110" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-
-
-            <Ellipse Canvas.Left="262.5" Canvas.Top="185" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="210" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="235" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="260" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="285" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-
-            <Ellipse Canvas.Left="412.5" Canvas.Top="10" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="412.5" Canvas.Top="35" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="235" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="260" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="285" Height="25" Width="25" Cursor="Hand" Stroke="#FFD4D4D4">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-white.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
+            <local:BGPieceW/>
 
             <!--Svarta Brickor -->
-            <Ellipse Canvas.Left="52.5" Canvas.Top="185" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="210" Height="27" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="235" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="260" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="52.5" Canvas.Top="285" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="10" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="35" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="172.5" Canvas.Top="60" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-
-            <Ellipse Canvas.Left="412.5" Canvas.Top="285" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="412.5" Canvas.Top="260" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-
-            <Ellipse Canvas.Left="262.5" Canvas.Top="10" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="35" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="60" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="85" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse Canvas.Left="262.5" Canvas.Top="110" Height="25" Width="25" Cursor="Hand" Stroke="#FF1F1F1F">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="Grafik\piece-black.jpg"/>
-                </Ellipse.Fill>
-            </Ellipse>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
+            <local:BGPieceB/>
 
             <!--<Canvas.Background>
                 <ImageBrush ImageSource="Grafik\background.png" Stretch="Fill" />

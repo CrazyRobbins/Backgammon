@@ -24,6 +24,7 @@ namespace Backgammon
         Point _posOfMouseOnHit;
         Point _posOfEllipseOnHit;
         Brush strokeColor;
+        Model model = new Model();
         
         public MainWindow()
         {
@@ -42,8 +43,9 @@ namespace Backgammon
 
                 strokeColor = _pieceSelected.Stroke;
                 _pieceSelected.Stroke = Brushes.Red;
-                
-                theCanvas.Children.Remove(_pieceSelected);
+
+                Panel parentPanel = (Panel)_pieceSelected.Parent;
+                parentPanel.Children.Remove(_pieceSelected);
                 theCanvas.Children.Add(_pieceSelected);
                 
                 _posOfMouseOnHit = pt;
@@ -57,15 +59,18 @@ namespace Backgammon
             if (_pieceSelected != null)
             {
                 Point pt = e.GetPosition(theCanvas);
-                Canvas.SetLeft(_pieceSelected, (pt.X - _posOfMouseOnHit.X) + _posOfEllipseOnHit.X);
-                Canvas.SetTop(_pieceSelected, (pt.Y - _posOfMouseOnHit.Y) + _posOfEllipseOnHit.Y);
+                Canvas.SetLeft(_pieceSelected, pt.X);
+                Canvas.SetTop(_pieceSelected, pt.Y);
             }
         }
 
         private void Canvas_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
-            _pieceSelected.Stroke = strokeColor;
-            _pieceSelected = null;
+            if (_pieceSelected != null)
+            {
+                _pieceSelected.Stroke = strokeColor;
+                _pieceSelected = null;
+            }
         }
     }
 }

@@ -9,7 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/background.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/piece-black.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/piece-white.jpg")]
 
 

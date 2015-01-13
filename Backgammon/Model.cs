@@ -49,6 +49,7 @@ namespace Backgammon
             {
                 // Lägger till positionen för d2 i samma string
             }
+            return "";
         }
 
         // Retunerar ett slumptal mellan 1-6
