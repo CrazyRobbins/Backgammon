@@ -10,47 +10,120 @@ namespace Backgammon
     {
         private bool _d1 = false;
         private bool _d2 = false;
+
+        private int [] pointX = new int[24];
+
+        public Model()
+        { 
+
+            // sparar x kordinater
+            pointX[0] = 365;
+            pointX[1] = 336;
+            pointX[2] =308;
+            pointX[3] =279;
+            pointX[4] =250;
+            pointX[5] =223;
+            pointX[6] =143;
+            pointX[7] =116;
+            pointX[8] =88;
+            pointX[9] =58;
+            pointX[10] = 30;
+            pointX[11] = 0;
+            int b = 12;
+            for (int i = 11; i >=0; i--)
+            {
+                pointX[b] = pointX[i];
+                b++;
+            }
+
+            //skapar players startvärden
+
+        }
         
         public static bool ModelSelftest()
         {
             return false;
         }
 
-        // Tar emot position och retunerar alla positioner som är giltiga i form av en string
-        // exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
-        public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        // returnerar true om flytt är giltlig
+        private bool check(double newY, double newX, Player inActivePlayer)
         {
-            string str;
-
-            if (d1 == d2)
+            for(int i=0; i<24; i++)
             {
-                str = validMovesSame(pos, d1, turnPlayer, player2);
+                if (i <= 11 && newY <= 150 && newX < (pointX[i]+28) && newX > (pointX[i]-28) && inActivePlayer._laces[i] != 0)
+            { return false; }
+                else if (i > 11 && newY > 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28) && inActivePlayer._laces[i] != 0) 
+            { return false; }
             }
-            else
+            return true;
+        } // check
+
+       // Anropas efter giltlig flytt, uppdaterar till array till rätt spelplan
+        private void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
+        {
+
+            for (int i = 0; i < 24; i++)
             {
-                str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
+                if (i <= 11 && newY <= 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                {
+                    activePlayer._laces[i]++;
+                }
+                else if (i > 11 && newY > 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                { 
+                    activePlayer._laces[i]++; 
+                }
             }
-            return str;
-        }
 
-        private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
-        {
-            return "p";
-        }
+            for (int i = 0; i < 24; i++)
+            {
+                if (i <= 11 && oldY <= 150 && oldX < (pointX[i] + 28) &&  oldX > (pointX[i] - 28))
+                {
+                    activePlayer._laces[i]--;
+                }
+                else if (i > 11 && oldY > 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                {
+                    activePlayer._laces[i]--;
+                }
+            }
+          
 
-        private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
-        {
+        } // changeArray
+
+        //// Tar emot position och retunerar alla positioner som är giltiga i form av en string
+        //// exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
+        //public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        //{
+        //    string str;
+
+        //    if (d1 == d2)
+        //    {
+        //        str = validMovesSame(pos, d1, turnPlayer, player2);
+        //    }
+        //    else
+        //    {
+        //        str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
+        //    }
+        //    return str;
+        //}
+
+        //private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
+        //{
+        //    return "p";
+        //}
+
+        //private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        //{
             
-            if (!_d1)
-            {
-                // Lägger till positionen för d1 i en string
-            }
-            if (!_d2)
-            {
-                // Lägger till positionen för d2 i samma string
-            }
-            return "";
-        }
+        //    if (!_d1)
+        //    {
+        //        // Lägger till positionen för d1 i en string
+        //    }
+        //    if (!_d2)
+        //    {
+        //        // Lägger till positionen för d2 i samma string
+        //    }
+        //    return "";
+        //}
 
         // Retunerar ett slumptal mellan 1-6
         public int dice()
