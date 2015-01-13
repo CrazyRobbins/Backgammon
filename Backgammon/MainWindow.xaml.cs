@@ -26,9 +26,11 @@ namespace Backgammon
         Brush strokeColor;
         Model model = new Model();
         
+       
+        
         public MainWindow()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private void Canvas_MouseDown_1(object sender, MouseButtonEventArgs e)
