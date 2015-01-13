@@ -68,3 +68,4 @@ C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.Properties.
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csproj.GenerateResource.Cache
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.exe
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.pdb
+C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csprojResolveAssemblyReference.cache
