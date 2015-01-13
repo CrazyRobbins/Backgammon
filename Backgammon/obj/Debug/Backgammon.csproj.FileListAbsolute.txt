@@ -34,8 +34,6 @@ C:\Users\Tim\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon_Content
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Backgammon.exe.config
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon.exe
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\background.png
-C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\piece-black.jpg
-C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\piece-white.jpg
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Backgammon.exe
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Backgammon.pdb
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon.csprojResolveAssemblyReference.cache
@@ -69,3 +67,9 @@ C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csproj.Gene
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.exe
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.pdb
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csprojResolveAssemblyReference.cache
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceB.baml
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceW.baml
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceB.g.cs
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceW.g.cs
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon_MarkupCompile.lref

@@ -46,7 +46,7 @@ namespace Backgammon
         }
 
         // returnerar true om flytt är giltlig
-        private bool check(double newY, double newX, Player inActivePlayer)
+        public bool check(double newY, double newX, Player inActivePlayer)
         {
             for(int i=0; i<24; i++)
             {
@@ -59,7 +59,7 @@ namespace Backgammon
         } // check
 
        // Anropas efter giltlig flytt, uppdaterar till array till rätt spelplan
-        private void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
+        public void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
         {
 
             for (int i = 0; i < 24; i++)
@@ -90,46 +90,7 @@ namespace Backgammon
         } // changeArray
 
 
-        void tillfallig()
-        { 
-        //skapar players start posstioner 
-        Player black = new Player();
-        Player white = new Player();
-            Player activePlayer;
-            Player inActivePlayer;
-            if(true)
-            {
-               activePlayer = black;
-                inActivePlayer = white;
-            }
-            else
-            {
-                activePlayer = white;
-                inActivePlayer = black;
-            }
-
-        black._laces[23] = 2;
-        black._laces[12] = 5;
-        black._laces[7] = 3;
-        black._laces[5] = 5;
-        white._laces[0] = 2;
-        white._laces[11] = 5;
-        white._laces[16] = 3;
-        white._laces[18] = 5;
-
-            //mouseup
-            double newY = Canvas.GetTop(_pieceSelected);
-            double newX = Canvas.GetLeft(_pieceSelected);
-            if(!check(newY, newX, inActivePlayer)
-            {
-                Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
-                Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
-            }
-            else
-            {
-                changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
-            }
-        }
+      
         //// Tar emot position och retunerar alla positioner som är giltiga i form av en string
         //// exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
         //public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)

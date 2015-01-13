@@ -25,11 +25,35 @@ namespace Backgammon
         Point _posOfEllipseOnHit;
         Brush strokeColor;
         Model model = new Model();
+        Player black = new Player();
+        Player white = new Player();
+        Player activePlayer;
+        Player inActivePlayer;
         
         public MainWindow()
         {
             InitializeComponent();
 
+         
+            if (true)
+            {
+                activePlayer = black;
+                inActivePlayer = white;
+            }
+            //else
+            //{
+            //    activePlayer = white;
+            //    inActivePlayer = black;
+            //}
+
+            black._laces[23] = 2;
+            black._laces[12] = 5;
+            black._laces[7] = 3;
+            black._laces[5] = 5;
+            white._laces[0] = 2;
+            white._laces[11] = 5;
+            white._laces[16] = 3;
+            white._laces[18] = 5;
         }
 
         private void Canvas_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -66,11 +90,25 @@ namespace Backgammon
 
         private void Canvas_MouseUp_1(object sender, MouseButtonEventArgs e)
         {
+            double newY = Canvas.GetTop(_pieceSelected);
+            double newX = Canvas.GetLeft(_pieceSelected);
+            if (!model.check(newY, newX, inActivePlayer))
+            {
+                Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
+                Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
+            }
+            else
+            {
+                model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
+            }
             if (_pieceSelected != null)
             {
                 _pieceSelected.Stroke = strokeColor;
                 _pieceSelected = null;
             }
+
+          
+
         }
     }
 }
