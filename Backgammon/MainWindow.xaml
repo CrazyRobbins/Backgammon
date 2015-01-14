@@ -4,14 +4,14 @@
         xmlns:local="clr-namespace:Backgammon"
         Title="MainWindow">
     <Viewbox Stretch="Fill">
-        <Canvas x:Name="theCanvas" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" MouseUp="Canvas_MouseUp_1" Height="320" Width="490" Background="White">
-            <Grid Width="490" Height="320">
-                
+        <Canvas  x:Name="theCanvas" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" MouseUp="Canvas_MouseUp_1" Height="320" Width="490" Background="White">
+            <Grid Background="SeaGreen" Width="490" Height="320">
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Grid Name="mainGrid" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -23,7 +23,7 @@
                         <RowDefinition Height="20"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    
+
                     <UniformGrid Rows="1" Columns="6" Grid.Column="0" Grid.Row="0">
                         <Grid Name="g1">
                             <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
@@ -65,7 +65,7 @@
                             <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                         </Grid>
                     </UniformGrid>
-                    
+
                     <UniformGrid Rows="1" Columns="6" Grid.Column="0" Grid.Row="2">
                         <Grid Name="g13">
                             <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
@@ -107,18 +107,34 @@
                             <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                         </Grid>
                     </UniformGrid>
-                   
+
                 </Grid>
-                <Grid Grid.Column="1" Background="Green">
-                    <Grid Name="WhiOut" Background="GreenYellow" Width="30" Height="100" Margin="24,220,24,0" ></Grid>
-                    <Grid Name="BlaOut" Background="GreenYellow" Width="30" Height="100" Margin="34,0,34,220" ></Grid>
-                    <Button x:Name="DiceRoll" Click="diceRoll" Width="60" Height="20" Margin="19,194,19,106" >Roll dice</Button>
-                    <Image Name="DiceView" Width="50" Height="50" Stretch="UniformToFill" Margin="-4,135,52,135"></Image>
-                    <Image Name="DiceView2" Width="50" Height="50" Stretch="UniformToFill" Margin="31,135,17,135"></Image>
+                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2">
+                <Grid  Grid.Column="1" Background="SeaGreen">
+                    <Grid Name="WhiOut" Background="DarkOliveGreen" Width="30" Height="100" Margin="32,0,32,-4" VerticalAlignment="Bottom" ></Grid>
+                    <Grid Name="BlaOut" Background="DarkOliveGreen" Width="30" Height="100" Margin="34,0,34,220" ></Grid>
+                    <Button x:Name="DiceRoll" Click="diceRoll" Width="60" Height="20" Margin="19,192,15,104" >Roll dice</Button>
+                    <Grid Width="90" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <UniformGrid Grid.Column="0"></UniformGrid>
+                    <Image Name="DiceView" Source="Grafik\Dice1.png" Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
+                        <UniformGrid Grid.Column="1" HorizontalAlignment="Right" >
+                            <Image Name="DiceView2" Source="Grafik\Dice5.png" Margin="-5,0,5,0" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+
+
+                        </UniformGrid>
+                        
+                    </Grid>
+                    
                 </Grid>
+                </Border>
             </Grid>
-           
-            
+
+
             <!--Vita Brickor -->
             <local:BGPieceW Canvas.Left="1" Canvas.Top="0"/>
             <local:BGPieceW Canvas.Left="1" Canvas.Top="25"/>
@@ -152,7 +168,7 @@
             <local:BGPieceB Canvas.Left="1" Canvas.Top="195"/>
             <local:BGPieceB Canvas.Left="365" Canvas.Top="295"/>
             <local:BGPieceB Canvas.Left="365" Canvas.Top="270"/>
-            
+
             <!--<Canvas.Background>
                 <ImageBrush ImageSource="Grafik\background.png" Stretch="Fill" />
             </Canvas.Background>-->

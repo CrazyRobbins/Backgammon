@@ -10,7 +10,7 @@ namespace Backgammon
     {
         private bool _d1 = false;
         private bool _d2 = false;
-
+        Random rnd = new Random();
         private int [] pointX = new int[24];
 
         public Model()
@@ -130,7 +130,7 @@ namespace Backgammon
         // Retunerar ett slumptal mellan 1-6
         public int dice()
         {
-            Random rnd = new Random();
+           
             int dice = rnd.Next(1, 7);
             return dice;
         }

@@ -112,9 +112,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Grafik\background.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Grafik\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Grafik\piece-black.jpg" />
+    <Resource Include="Grafik\piece-white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Grafik\Dice1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -135,14 +139,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Grafik\piece-black.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Grafik\piece-white.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="Ljud\roll.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

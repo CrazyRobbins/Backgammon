@@ -71,7 +71,7 @@ namespace Backgammon
 
                 Panel parentPanel = (Panel)_pieceSelected.Parent;
                 parentPanel.Children.Remove(_pieceSelected);
-                parentPanel.Children.Add(_pieceSelected);
+                theCanvas.Children.Add(_pieceSelected);
 
                 _posOfMouseOnHit = pt;
                 _posOfEllipseOnHit.X = Canvas.GetLeft(_pieceSelected);
@@ -117,6 +117,8 @@ namespace Backgammon
             dice2 = model.dice();
             DiceView.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice1.ToString() + ".png", UriKind.Relative));
             DiceView2.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice2.ToString() + ".png", UriKind.Relative));
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Sevag\Documents\GitHub\Backgammon\Backgammon\Ljud\roll.wav");
+            player.Play();
         }
     }
 }
