@@ -143,15 +143,15 @@ namespace Backgammon
             {
                 double newY = Canvas.GetTop(_pieceSelected);
                 double newX = Canvas.GetLeft(_pieceSelected);
-                //if (!model.check(newY, newX, inActivePlayer))
-                //{
-                //    Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
-                //    Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
-                //}
-                //else
-                //{
-                //    model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
-                //}
+                if (!model.check(newY, newX, inActivePlayer))
+                {
+                    Canvas.SetTop(_pieceSelected, _posOfEllipseOnHit.Y);
+                    Canvas.SetLeft(_pieceSelected, _posOfEllipseOnHit.X);
+                }
+                else
+                {
+                    model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
+                }
 
                 _pieceSelected.Stroke = strokeColor;
                 _pieceSelected = null;
