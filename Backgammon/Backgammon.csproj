@@ -54,19 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BGPieceB.xaml.cs">
-      <DependentUpon>BGPieceB.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="BGPieceW.xaml.cs">
-      <DependentUpon>BGPieceW.xaml</DependentUpon>
+    <Compile Include="GameBoard.xaml.cs">
+      <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="View.cs" />
-    <Page Include="BGPieceB.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="BGPieceW.xaml">
+    <Page Include="GameBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

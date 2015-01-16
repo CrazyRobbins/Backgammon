@@ -91,41 +91,41 @@ namespace Backgammon
 
 
       
-        //// Tar emot position och retunerar alla positioner som är giltiga i form av en string
-        //// exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
-        //public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
-        //{
-        //    string str;
+        // Tar emot position och retunerar alla positioner som är giltiga i form av en string
+        // exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
+        public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        {
+            string str;
 
-        //    if (d1 == d2)
-        //    {
-        //        str = validMovesSame(pos, d1, turnPlayer, player2);
-        //    }
-        //    else
-        //    {
-        //        str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
-        //    }
-        //    return str;
-        //}
+            if (d1 == d2)
+            {
+                str = validMovesSame(pos, d1, turnPlayer, player2);
+            }
+            else
+            {
+                str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
+            }
+            return str;
+        }
 
-        //private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
-        //{
-        //    return "p";
-        //}
+        private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
+        {
+            return "p";
+        }
 
-        //private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
-        //{
+        private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
+        {
             
-        //    if (!_d1)
-        //    {
-        //        // Lägger till positionen för d1 i en string
-        //    }
-        //    if (!_d2)
-        //    {
-        //        // Lägger till positionen för d2 i samma string
-        //    }
-        //    return "";
-        //}
+            if (!_d1)
+            {
+                // Lägger till positionen för d1 i en string
+            }
+            if (!_d2)
+            {
+                // Lägger till positionen för d2 i samma string
+            }
+            return "";
+        }
 
         // Retunerar ett slumptal mellan 1-6
         public int dice()
