@@ -126,6 +126,18 @@ namespace Backgammon
             theCanvas.IsEnabled = true;
             theCanvas.IsHitTestVisible = true;
             theCanvas.Effect = null;
+
+            DiceRoll.IsEnabled = true;
+            DiceRoll.Opacity = 1;
+            DiceView.Opacity = 0;
+            DiceView2.Opacity = 0;
+
+            ImageBrush light = new ImageBrush();
+            ImageBrush dark = new ImageBrush();
+
+            light.ImageSource = new BitmapImage( new Uri( @"Grafik/piece-white.jpg", UriKind.Relative ) );
+            dark.ImageSource = new BitmapImage( new Uri( @"Grafik/piece-black.jpg", UriKind.Relative ) ); 
+
             int totalChildren = theCanvas.Children.Count - 1;
             for (int i = totalChildren; i > 0; i--)
             {
@@ -139,7 +151,7 @@ namespace Backgammon
             for (int i = 0; i < 15; i++){
                 
                 Ellipse _piece = load_piece();
-                _piece.Fill = Brushes.White;
+                _piece.Fill = light;
                 if (i < 5){
                     Canvas.SetLeft(_piece, 1);
                     Canvas.SetTop(_piece, 25 * (i % 5));
@@ -159,7 +171,7 @@ namespace Backgammon
             }
             for (int i = 0; i < 15; i++){
                 Ellipse _piece = load_piece();
-                _piece.Fill = Brushes.Black;
+                _piece.Fill = dark;
                 if (i < 5){
                     Canvas.SetLeft(_piece, 1);
                     Canvas.SetTop(_piece, 195 + (25 * (i % 5)));
@@ -261,7 +273,8 @@ namespace Backgammon
                 else
                 {
                     model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
-                    //double position = model.fixPosition( newX );
+                    double position = model.fixPosition( newX );
+                    Canvas.SetLeft( _pieceSelected, position );
                     turn = turn + 1;
                     if (turn == 2)
                     {

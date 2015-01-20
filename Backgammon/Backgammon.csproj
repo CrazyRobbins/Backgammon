@@ -108,8 +108,12 @@
     <Resource Include="Grafik\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Grafik\piece-black.jpg" />
-    <Resource Include="Grafik\piece-white.jpg" />
+    <Content Include="Grafik\piece-black.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafik\piece-white.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Grafik\Dice1.png">
@@ -139,6 +143,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Grafik\wood-background2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Grafik\metal-dark.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Grafik\metal-light.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="Ljud\roll.wav" />
