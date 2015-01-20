@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Backgammon"
         Title="MainWindow">
-    <Border BorderThickness="10,10,10,10" BorderBrush="Moccasin">
+    <Border BorderThickness="5" BorderBrush="Moccasin">
+        
         <Viewbox Stretch="Fill">
             <local:GameBoard/>
         </Viewbox>

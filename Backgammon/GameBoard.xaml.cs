@@ -37,14 +37,37 @@ namespace Backgammon
         private bool changePlayerBool;
         private int turn;
 
+        void Active( Object sender, EventArgs args )
+        {
+
+
+        }
+
+        void DeActive( Object sender, EventArgs args )
+        {
+
+            theCanvas.Opacity = 1;
+            theCanvas.IsEnabled = false;
+            theCanvas.IsHitTestVisible = false;
+            theCanvas.Effect = blur;
+            menuGrid.IsHitTestVisible = true;
+            menuGrid.IsEnabled = true;
+            menuGrid.Opacity = 1;
+        }
+
         public GameBoard()
         {
+            App.Current.Activated += Active;
+            App.Current.Deactivated += DeActive;
             InitializeComponent();
             menuGrid.Opacity = 1;
             menuGrid.IsEnabled = true;
             theCanvas.Opacity = 1;
             theCanvas.IsEnabled = false;
             theCanvas.Effect = blur;
+
+            DiceView.Opacity = 0;
+            DiceView2.Opacity = 0;
 
             polygons = new Polygon[] {p0, p1, p2, p3, p4, p5, p6, p7,
                                       p8, p9, p10, p11, p12, p13, p14,
@@ -238,6 +261,7 @@ namespace Backgammon
                 else
                 {
                     model.changeArray(newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer);
+                    //double position = model.fixPosition( newX );
                     turn = turn + 1;
                     if (turn == 2)
                     {
@@ -256,12 +280,15 @@ namespace Backgammon
 
         private void diceRoll(object sender, RoutedEventArgs e)
         {
-            int dice1, dice2;
+            
             dice1 = model.dice();
             dice2 = model.dice();
             DiceView.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice1.ToString() + ".png", UriKind.Relative));
             DiceView2.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice2.ToString() + ".png", UriKind.Relative));
+            DiceView.Opacity = 1;
+            DiceView2.Opacity = 2;
 
+            DiceRoll.Opacity = 0;
             DiceRoll.IsEnabled = false;
 
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
@@ -315,6 +342,9 @@ namespace Backgammon
                 inActivePlayer = white;
                 changePlayerBool = true;
                 DiceRoll.IsEnabled = true;
+                DiceRoll.Opacity = 1;
+                DiceView.Opacity = 0;
+                DiceView2.Opacity = 0;
             }
             else if (changePlayerBool == true)
             {
@@ -322,6 +352,9 @@ namespace Backgammon
                 inActivePlayer = black;
                 changePlayerBool = false;
                 DiceRoll.IsEnabled = true;
+                DiceRoll.Opacity = 1;
+                DiceView.Opacity = 0;
+                DiceView2.Opacity = 0;
             }
         }
     }
