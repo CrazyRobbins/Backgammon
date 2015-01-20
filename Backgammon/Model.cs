@@ -58,6 +58,19 @@ namespace Backgammon
             return true;
         } // check
 
+        public double fixPosition(double newX)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                if (newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                {
+                    return pointX[i];
+                }
+             
+            }
+            return 0;
+        }
+
        // Anropas efter giltlig flytt, uppdaterar till array till rätt spelplan
         public void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
         {
@@ -111,8 +124,10 @@ namespace Backgammon
             }
             else // black
             {
-                positionP = (positionP - dice) % 24;
-                return positionP;
+                positionP = (positionP-dice)%24;
+                return positionP < 0 ? positionP + 24 : positionP;
+
+               
             }
         } //lightUp
       
