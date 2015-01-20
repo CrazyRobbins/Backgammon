@@ -89,7 +89,32 @@ namespace Backgammon
 
         } // changeArray
 
+        public int lightUp( int dice, double oldY, double oldX, bool player )
+        {
+            int positionP = 0;
 
+            for (int i = 0; i < 24; i++)
+            {
+                if (i <= 11 && oldY <= 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                {
+                    positionP = i;
+                }
+                else if (i > 11 && oldY > 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                {
+                    positionP = i;
+                }
+            }
+            if (!player) // white
+            {
+                positionP = (positionP + dice) % 24;
+                return positionP;
+            }
+            else // black
+            {
+                positionP = (positionP - dice) % 24;
+                return positionP;
+            }
+        } //lightUp
       
         // Tar emot position och retunerar alla positioner som är giltiga i form av en string
         // exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till

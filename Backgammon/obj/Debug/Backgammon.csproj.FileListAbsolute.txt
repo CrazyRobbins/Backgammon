@@ -61,7 +61,6 @@ C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.Properties.
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csproj.GenerateResource.Cache
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.exe
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.pdb
-C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csprojResolveAssemblyReference.cache
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceB.baml
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceW.baml
 C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\obj\Debug\BGPieceB.g.cs
@@ -87,3 +86,7 @@ C:\Users\Sevag\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon.cspro
 C:\Users\Sevag\Documents\GitHub\Backgammon\Backgammon\obj\Debug\Backgammon_Content.g.cs
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\GameBoard.g.cs
 C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\GameBoard.baml
+C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\Backgammon.csprojResolveAssemblyReference.cache
+C:\Users\Viktor\Documents\Backgammon\Backgammon\obj\Debug\App.baml
+C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Backgammon.Theme.dll
+C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Backgammon.Theme.pdb

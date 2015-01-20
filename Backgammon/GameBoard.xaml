@@ -6,174 +6,159 @@
              xmlns:local="clr-namespace:Backgammon"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Canvas  x:Name="theCanvas" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" MouseUp="Canvas_MouseUp_1" Height="320" Width="490" Background="White">
-        <Grid Background="SeaGreen" Width="490" Height="320">
+    <Grid>
+        <Canvas x:Name="theCanvas" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" MouseUp="Canvas_MouseUp_1" Height="320" Width="490" Background="White">
+            
+            <Grid Background="#FFAA855F" Width="490" Height="320">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80*"/>
-                <ColumnDefinition Width="20*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid Name="mainGrid" Grid.Column="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
 
-                <UniformGrid Rows="1" Columns="6" Grid.Column="0" Grid.Row="0">
-                    <Grid Name="g1">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g2">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g3">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g4">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g5">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g6">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                </UniformGrid>
+                <Grid Name="mainGrid" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-                <UniformGrid Rows="1" Columns="6" Grid.Column="2" Grid.Row="0">
-                    <Grid Name="g7">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g8">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g9">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    <UniformGrid Rows="1" Columns="6" Grid.Column="0" Grid.Row="0">
+                    <Grid Name="g11">
+                        <Polygon Name="p11" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g10">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                        <Polygon Name="p10" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
-                    <Grid Name="g11">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    <Grid Name="g9">
+                        <Polygon Name="p9" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
-                    <Grid Name="g12">
-                        <Polygon Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    <Grid Name="g8">
+                        <Polygon Name="p8" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g7">
+                        <Polygon Name="p7" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g6">
+                        <Polygon Name="p6" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
                 </UniformGrid>
-
+                <UniformGrid Rows="1" Columns="6" Grid.Column="2" Grid.Row="0">
+                    <Grid Name="g5">
+                        <Polygon Name="p5" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g4">
+                        <Polygon Name="p4" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g3">
+                        <Polygon Name="p3" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g2">
+                        <Polygon Name="p2" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g1">
+                        <Polygon Name="p1" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FFC30000" Stretch="Fill"/>
+                    </Grid>
+                    <Grid Name="g0">
+                        <Polygon Name="p0" Points="0, 0 0, 0 15, 125 30, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
+                </UniformGrid>
                 <UniformGrid Rows="1" Columns="6" Grid.Column="0" Grid.Row="2">
+                    <Grid Name="g12">
+                        <Polygon Name="p12" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
                     <Grid Name="g13">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                        <Polygon Name="p13" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g14">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p14" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g15">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                        <Polygon Name="p15" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g16">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p16" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g17">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g18">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p17" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                 </UniformGrid>
-
                 <UniformGrid Rows="1" Columns="6" Grid.Column="2" Grid.Row="2">
+                    <Grid Name="g18">
+                        <Polygon Name="p18" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                    </Grid>
                     <Grid Name="g19">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                        <Polygon Name="p19" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g20">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p20" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g21">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
+                        <Polygon Name="p21" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g22">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p22" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
                     </Grid>
                     <Grid Name="g23">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FF2B2A2A" Stretch="Fill"/>
-                    </Grid>
-                    <Grid Name="g24">
-                        <Polygon Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
+                        <Polygon Name="p23" Points="15.5, 0 0, 125 30, 125 15, 0" Fill="#FFC30000" Stretch="Fill"/>
                     </Grid>
                 </UniformGrid>
 
-            </Grid>
-            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2">
-                <Grid  Grid.Column="1" Background="SeaGreen">
-                    <Grid Name="WhiOut" Background="DarkOliveGreen" Width="30" Height="100" Margin="32,0,32,-4" VerticalAlignment="Bottom" ></Grid>
-                    <Grid Name="BlaOut" Background="DarkOliveGreen" Width="30" Height="100" Margin="34,0,34,220" ></Grid>
-                    <Button x:Name="DiceRoll" Click="diceRoll" Width="60" Height="20" Margin="19,192,15,104" >Roll dice</Button>
-                    <Grid Width="90" Height="60">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50*"></ColumnDefinition>
-                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                </Grid>
+                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1,1,2,1">
+                    <Grid  Grid.Column="1" Background="#FFAA855F">
+                        <Grid Name="WhiOut" Width="30" Height="100" Margin="34,0,34,-8" VerticalAlignment="Bottom" >
+                            <Image Source="Grafik/piece-output.jpeg"/>
+                        </Grid>
+                        <Grid Name="BlaOut" Width="30" Height="100" Margin="34,0,34,208" >
+                            <Image Source="Grafik/piece-output.jpeg"/>
+                        </Grid>
+                        
+                        
+                        <Grid Width="90" Height="60">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
 
-                        </Grid.ColumnDefinitions>
-                        <UniformGrid Grid.Column="0"></UniformGrid>
-                        <Image Name="DiceView" Source="Grafik\Dice1.png" Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
-                        <UniformGrid Grid.Column="1" HorizontalAlignment="Right" >
-                            <Image Name="DiceView2" Source="Grafik\Dice5.png" Margin="-5,0,5,0" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                            </Grid.ColumnDefinitions>
+                            <UniformGrid Grid.Column="0"></UniformGrid>
+                            <Image Name="DiceView" Source="Grafik\Dice1.png" Stretch="UniformToFill" HorizontalAlignment="Center"></Image>
+                            <UniformGrid Grid.Column="1" HorizontalAlignment="Right" >
+                                <Image Name="DiceView2" Source="Grafik\Dice5.png" Margin="-5,0,5,0" Stretch="UniformToFill" HorizontalAlignment="Center"/>
 
 
-                        </UniformGrid>
+                            </UniformGrid>
+
+                        </Grid>
 
                     </Grid>
+                </Border>
+            </Grid>
 
-                </Grid>
-            </Border>
-        </Grid>
+            <Grid Background="#FF674E2D" Name="UtSlagenPlats" Width="28" Height="320" Canvas.Left="178">
+                <Grid Background="Tan" Name="blackOut" Width="30 " Height="30" Margin="4,77,6,212"></Grid>
+                <Grid Background="Tan" Name="WhiteOut" Width="30 " Height="30" Margin="4,225,6,64"></Grid>
+            </Grid>
 
-
-        <!--Vita Brickor
-        <local:BGPieceW Canvas.Left="1" Canvas.Top="0"/>
-        <local:BGPieceW Canvas.Left="1" Canvas.Top="25"/>
-        <local:BGPieceW Canvas.Left="1" Canvas.Top="50"/>
-        <local:BGPieceW Canvas.Left="1" Canvas.Top="75"/>
-        <local:BGPieceW Canvas.Left="1" Canvas.Top="100"/>
-        <local:BGPieceW Canvas.Left="364" Canvas.Top="0"/>
-        <local:BGPieceW Canvas.Left="364" Canvas.Top="25"/>
-        <local:BGPieceW Canvas.Left="115" Canvas.Top="295"/>
-        <local:BGPieceW Canvas.Left="115" Canvas.Top="270"/>
-        <local:BGPieceW Canvas.Left="115" Canvas.Top="245"/>
-        <local:BGPieceW Canvas.Left="222" Canvas.Top="295"/>
-        <local:BGPieceW Canvas.Left="222" Canvas.Top="270"/>
-        <local:BGPieceW Canvas.Left="222" Canvas.Top="245"/>
-        <local:BGPieceW Canvas.Left="222" Canvas.Top="220"/>
-        <local:BGPieceW Canvas.Left="222" Canvas.Top="195"/>
-
-        Svarta Brickor
-        <local:BGPieceB Canvas.Left="115" Canvas.Top="0"/>
-        <local:BGPieceB Canvas.Left="115" Canvas.Top="25"/>
-        <local:BGPieceB Canvas.Left="115" Canvas.Top="50"/>
-        <local:BGPieceB Canvas.Left="222" Canvas.Top="0"/>
-        <local:BGPieceB Canvas.Left="222" Canvas.Top="25"/>
-        <local:BGPieceB Canvas.Left="222" Canvas.Top="50"/>
-        <local:BGPieceB Canvas.Left="222" Canvas.Top="75"/>
-        <local:BGPieceB Canvas.Left="222" Canvas.Top="100"/>
-        <local:BGPieceB Canvas.Left="1" Canvas.Top="295"/>
-        <local:BGPieceB Canvas.Left="1" Canvas.Top="270"/>
-        <local:BGPieceB Canvas.Left="1" Canvas.Top="245"/>
-        <local:BGPieceB Canvas.Left="1" Canvas.Top="220"/>
-        <local:BGPieceB Canvas.Left="1" Canvas.Top="195"/>
-        <local:BGPieceB Canvas.Left="365" Canvas.Top="295"/>
-        <local:BGPieceB Canvas.Left="365" Canvas.Top="270"/>-->
-
-        <!--<Canvas.Background>
+            <Button x:Name="DiceRoll" Click="diceRoll" Width="60" Height="25" Canvas.Left="410" Canvas.Top="190">Roll Dice</Button>
+            <Button Name="menu_button" Height="20" Width="60" Canvas.Top="150" Canvas.Left="5" Click="menu_action">Menu</Button>
+            <!--<Canvas.Background>
                 <ImageBrush ImageSource="Grafik\background.png" Stretch="Fill" />
             </Canvas.Background>-->
 
-    </Canvas>
+        </Canvas>
+
+        <Grid Name="menuGrid" Width="490" Height="320">
+            <UniformGrid Rows="5" Columns="1" Height="200" Width="100">
+                <Button Name="Resume" Click="resume_game">Resume</Button>
+                <Button Name="NewGame" Click="new_game">New Game</Button>
+                <Button Name="Exit" Click="exit_game">Exit</Button>
+            </UniformGrid>
+        </Grid>
+    </Grid>
 </UserControl>

@@ -134,6 +134,12 @@
   <ItemGroup>
     <Content Include="Ljud\roll.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backgammon.Theme\Backgammon.Theme.csproj">
+      <Project>{b0b65080-66f7-4092-a961-843186197186}</Project>
+      <Name>Backgammon.Theme</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
