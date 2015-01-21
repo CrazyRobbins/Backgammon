@@ -15,20 +15,19 @@ namespace Backgammon
 
         public Model()
         { 
-
             // sparar x kordinater
-            pointX[0] = 365;
-            pointX[1] = 336;
-            pointX[2] =308;
-            pointX[3] =279;
-            pointX[4] =250;
-            pointX[5] =223;
-            pointX[6] =143;
-            pointX[7] =116;
-            pointX[8] =88;
-            pointX[9] =58;
-            pointX[10] = 30;
-            pointX[11] = 0;
+            pointX[0] = 363;
+            pointX[1] = 333;
+            pointX[2] =303;
+            pointX[3] =273;
+            pointX[4] =243;
+            pointX[5] =213;
+            pointX[6] =153;
+            pointX[7] =123;
+            pointX[8] =93;
+            pointX[9] =63;
+            pointX[10] = 33;
+            pointX[11] = 3;
             int b = 12;
             for (int i = 11; i >=0; i--)
             {
@@ -39,20 +38,15 @@ namespace Backgammon
             //skapar players startvärden
 
         }
-        
-        public static bool ModelSelftest()
-        {
-            return false;
-        }
 
         // returnerar true om flytt är giltlig
         public bool check(double newY, double newX, Player inActivePlayer)
         {
             for(int i=0; i<24; i++)
             {
-                if (i <= 11 && newY <= 150 && newX < (pointX[i]+28) && newX > (pointX[i]-28) && inActivePlayer._laces[i] != 0)
+                if (i <= 11 && newY <= 160 && newX < (pointX[i]+16) && newX >= (pointX[i]-14) && inActivePlayer._laces[i] != 0)
             { return false; }
-                else if (i > 11 && newY > 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28) && inActivePlayer._laces[i] != 0) 
+                else if (i > 11 && newY > 160 && newX < (pointX[i] + 16) && newX >= (pointX[i] - 14) && inActivePlayer._laces[i] != 0) 
             { return false; }
             }
             return true;
@@ -62,14 +56,14 @@ namespace Backgammon
         {
             for (int i = 0; i < 12; i++)
             {
-                if (newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                if (newX < (pointX[i] + 16) && newX >= (pointX[i] - 14))
                 {
                     return pointX[i];
                 }
              
             }
             return 0;
-        }
+        } // fixPosition
 
        // Anropas efter giltlig flytt, uppdaterar till array till rätt spelplan
         public void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
@@ -77,11 +71,11 @@ namespace Backgammon
 
             for (int i = 0; i < 24; i++)
             {
-                if (i <= 11 && newY <= 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                if (i <= 11 && newY <= 160 && newX < (pointX[i] + 16) && newX >= (pointX[i] - 14))
                 {
                     activePlayer._laces[i]++;
                 }
-                else if (i > 11 && newY > 150 && newX < (pointX[i] + 28) && newX > (pointX[i] - 28))
+                else if (i > 11 && newY > 160 && newX < (pointX[i] + 16) && newX >= (pointX[i] - 14))
                 { 
                     activePlayer._laces[i]++; 
                 }
@@ -89,17 +83,15 @@ namespace Backgammon
 
             for (int i = 0; i < 24; i++)
             {
-                if (i <= 11 && oldY <= 150 && oldX < (pointX[i] + 28) &&  oldX > (pointX[i] - 28))
+                if (i <= 11 && oldY <= 160 && oldX < (pointX[i] + 16) &&  oldX >= (pointX[i] - 14))
                 {
                     activePlayer._laces[i]--;
                 }
-                else if (i > 11 && oldY > 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                else if (i > 11 && oldY > 160 && oldX < (pointX[i] + 16) && oldX >= (pointX[i] - 14))
                 {
                     activePlayer._laces[i]--;
                 }
             }
-          
-
         } // changeArray
 
         public int lightUp( int dice, double oldY, double oldX, bool player )
@@ -108,11 +100,11 @@ namespace Backgammon
 
             for (int i = 0; i < 24; i++)
             {
-                if (i <= 11 && oldY <= 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                if (i <= 11 && oldY <= 160 && oldX < (pointX[i] + 16) && oldX >= (pointX[i] - 14))
                 {
                     positionP = i;
                 }
-                else if (i > 11 && oldY > 150 && oldX < (pointX[i] + 28) && oldX > (pointX[i] - 28))
+                else if (i > 11 && oldY > 160 && oldX < (pointX[i] + 16) && oldX >= (pointX[i] - 14))
                 {
                     positionP = i;
                 }
@@ -130,42 +122,6 @@ namespace Backgammon
                
             }
         } //lightUp
-      
-        // Tar emot position och retunerar alla positioner som är giltiga i form av en string
-        // exempel: str = "123" alltså plats 1, 2 och 3 går att flytta till
-        public string validMoves(int pos, int d1, int d2, Player turnPlayer, Player player2)
-        {
-            string str;
-
-            if (d1 == d2)
-            {
-                str = validMovesSame(pos, d1, turnPlayer, player2);
-            }
-            else
-            {
-                str = validMovesNotSame(pos, d1, d2, turnPlayer, player2);
-            }
-            return str;
-        }
-
-        private string validMovesSame(int pos, int d1, Player turnPlayer, Player player2)
-        {
-            return "p";
-        }
-
-        private string validMovesNotSame(int pos, int d1, int d2, Player turnPlayer, Player player2)
-        {
-            
-            if (!_d1)
-            {
-                // Lägger till positionen för d1 i en string
-            }
-            if (!_d2)
-            {
-                // Lägger till positionen för d2 i samma string
-            }
-            return "";
-        }
 
         // Retunerar ett slumptal mellan 1-6
         public int dice()
@@ -173,21 +129,6 @@ namespace Backgammon
            
             int dice = rnd.Next(1, 7);
             return dice;
-        }
-
-        // Tar bort bokstäver från str och gör om den till en int
-        public int StringToInt(string str)
-        {
-            foreach (char c in str)
-            {
-                if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
-                {
-                    string C = Convert.ToString(c);
-                    str = str.Replace(C, "");
-                }
-            }
-
-            return Convert.ToInt32(str);
         }
 
         // Returnerar true om spelare får gå in i mål
@@ -215,7 +156,6 @@ namespace Backgammon
                     }
                 }
             }
-
             return result;
         }
 
