@@ -145,12 +145,12 @@
     <Resource Include="Grafik\wood-background2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Grafik\metal-dark.jpg">
+    <Content Include="Grafik\metal-dark.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Grafik\metal-light.jpg">
+    </Content>
+    <Content Include="Grafik\metal-light.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="Ljud\roll.wav" />
   </ItemGroup>
   <ItemGroup>
