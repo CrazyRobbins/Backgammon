@@ -58,7 +58,6 @@
       <DependentUpon>GameBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
-    <Compile Include="View.cs" />
     <Page Include="GameBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +141,7 @@
     <Content Include="Grafik\wood-background1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Grafik\u-arrow.png" />
     <Resource Include="Grafik\wood-background2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -154,9 +154,9 @@
     <Content Include="Grafik\wood-border.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Grafik\wood-border2.jpg">
+    <Resource Include="Grafik\wood-border2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="Ljud\roll.wav" />
   </ItemGroup>
   <ItemGroup>

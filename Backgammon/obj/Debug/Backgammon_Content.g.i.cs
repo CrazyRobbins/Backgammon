@@ -14,7 +14,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/metal-dark.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/metal-light.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/wood-border.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grafik/wood-border2.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ljud/roll.wav")]
 
 

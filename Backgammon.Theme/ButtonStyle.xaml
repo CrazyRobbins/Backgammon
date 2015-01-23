@@ -13,11 +13,13 @@
     <SolidColorBrush x:Key="BorderBrush" Color="#B7B7B7"/>
     
     <Style TargetType="Button">
+        
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
+                    
                     <Border x:Name="t" Margin="{TemplateBinding Margin}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}">
@@ -29,6 +31,7 @@
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Border.Background>
+                        
                         <ContentPresenter Margin="{TemplateBinding Padding}"/>
                     </Border>
                     

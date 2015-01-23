@@ -8,8 +8,8 @@ namespace Backgammon
 {
     class Model
     {
-        private bool _d1 = false;
-        private bool _d2 = false;
+        //private bool _d1 = false;
+        //private bool _d2 = false;
         Random rnd = new Random();
         private int [] pointX = new int[24];
 
@@ -34,25 +34,26 @@ namespace Backgammon
                 pointX[b] = pointX[i];
                 b++;
             }
-
-            //skapar players startvärden
-
         }
 
         // returnerar true om flytt är giltlig
-        public bool check(double newY, double newX, Player inActivePlayer)
+        public bool check( double newY, double newX, Player inActivePlayer )
         {
             for(int i=0; i<24; i++)
             {
                 if (i <= 11 && newY <= 160 && newX < (pointX[i]+16) && newX >= (pointX[i]-14) && inActivePlayer._laces[i] != 0)
-            { return false; }
+                {
+                    return false;
+                }
                 else if (i > 11 && newY > 160 && newX < (pointX[i] + 16) && newX >= (pointX[i] - 14) && inActivePlayer._laces[i] != 0) 
-            { return false; }
+                { 
+                    return false;
+                }
             }
             return true;
         } // check
 
-        public double fixPosition(double newX)
+        public double fixPositionX(double newX)
         {
             for (int i = 0; i < 12; i++)
             {
@@ -63,9 +64,9 @@ namespace Backgammon
              
             }
             return 0;
-        } // fixPosition
+        } // fixPositionX
 
-       // Anropas efter giltlig flytt, uppdaterar till array till rätt spelplan
+       // Anropas efter giltig flytt, uppdaterar till array till rätt spelplan
         public void changeArray(double newY, double newX, double oldY, double oldX, Player activePlayer)
         {
 
@@ -77,7 +78,7 @@ namespace Backgammon
                 }
                 else if (i > 11 && newY > 160 && newX < (pointX[i] + 16) && newX >= (pointX[i] - 14))
                 { 
-                    activePlayer._laces[i]++; 
+                    activePlayer._laces[i]++;
                 }
             }
 
