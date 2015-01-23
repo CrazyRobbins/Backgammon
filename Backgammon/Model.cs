@@ -95,35 +95,6 @@ namespace Backgammon
             }
         } // changeArray
 
-        public int lightUp( int dice, double oldY, double oldX, bool player )
-        {
-            int positionP = 0;
-
-            for (int i = 0; i < 24; i++)
-            {
-                if (i <= 11 && oldY <= 160 && oldX < (pointX[i] + 16) && oldX >= (pointX[i] - 14))
-                {
-                    positionP = i;
-                }
-                else if (i > 11 && oldY > 160 && oldX < (pointX[i] + 16) && oldX >= (pointX[i] - 14))
-                {
-                    positionP = i;
-                }
-            }
-            if (!player) // white
-            {
-                positionP = (positionP + dice) % 24;
-                return positionP;
-            }
-            else // black
-            {
-                positionP = (positionP-dice)%24;
-                return positionP < 0 ? positionP + 24 : positionP;
-
-               
-            }
-        } //lightUp
-
         // Retunerar ett slumptal mellan 1-6
         public int dice()
         {
@@ -158,19 +129,6 @@ namespace Backgammon
                 }
             }
             return result;
-        }
-
-        // Kontrollerar om turnPlayer slått ut en av player2's brickor
-        public void brickTaken(Player turnPlayer, Player player2)
-        {
-            for (int i = 0; i < 24; i++)
-            {
-                if ((turnPlayer._laces[i] == 1) && (player2._laces[i] == 1))
-                {
-                    player2._laces[i] = 0;
-                    player2._out++;
-                }
-            }
         }
     }
 }

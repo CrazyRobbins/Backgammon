@@ -11,13 +11,14 @@ namespace Backgammon
         public int[] _laces;
         public int _bricksAmount;
         public int _out;
+        public bool _goalReady;
 
         public Player()
         {
             _laces = new int[24];
             _bricksAmount = 15;
             _out = 0;
-            
+            _goalReady = false;
         }
 
     }
