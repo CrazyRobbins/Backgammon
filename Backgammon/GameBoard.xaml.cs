@@ -36,6 +36,7 @@ namespace Backgammon
         ImageBrush piece_dark = new ImageBrush();
         ImageBrush polygon_light = new ImageBrush();
         ImageBrush polygon_dark = new ImageBrush();
+        ImageBrush home_image = new ImageBrush();
 
         void Active( Object sender, EventArgs args )
         {
@@ -87,6 +88,7 @@ namespace Backgammon
             white._laces[11] = 5;
             white._laces[16] = 3;
             white._laces[18] = 5;
+            
         } // GAMEBOARD
 
         private void Canvas_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -127,20 +129,48 @@ namespace Backgammon
                         if (activePlayer == black)
                         {
                             if (start - dice1 - dice2 >= 0 && white._laces[start - dice1 - dice2] <= 1)
+                            {
                                 polygons[start - dice1 - dice2].Fill = Brushes.Yellow;
+                                if (black._goalReady)
+                                    blackHome.Background = Brushes.Red;
+                            }
+
+
                             if (start - dice1 >= 0 && dice1 != 0 && white._laces[start - dice1] <= 1)
+                            {
                                 polygons[start - dice1].Fill = Brushes.Yellow;
+                                if (black._goalReady)
+                                    blackHome.Background = Brushes.Red;
+                            }
+
                             if (start - dice2 >= 0 && dice2 != 0 && white._laces[start - dice2] <= 1)
+                            {
                                 polygons[start - dice2].Fill = Brushes.Yellow;
+                                if (black._goalReady)
+                                    blackHome.Background = Brushes.Red;
+                            }
+                               
                         }
                         else
                         {
                             if (start + dice1 + dice2 <= 23 && black._laces[start + dice1 + dice2] <= 1)
+                            {
                                 polygons[start + dice1 + dice2].Fill = Brushes.Yellow;
+                                if (white._goalReady)
+                                    whiteHome.Background = Brushes.Red;
+                            }
                             if (start + dice1 <= 23 && dice1 != 0 && black._laces[start + dice1] <= 1)
+                            {
                                 polygons[start + dice1].Fill = Brushes.Yellow;
+                                if (white._goalReady)
+                                    whiteHome.Background = Brushes.Red;
+                            }
                             if (start + dice2 <= 23 && dice2 != 0 && black._laces[start + dice2] <= 1)
+                            {
                                 polygons[start + dice2].Fill = Brushes.Yellow;
+                                 if (white._goalReady)
+                                    whiteHome.Background = Brushes.Red;
+                            }
                         }
                     }
                 }
@@ -184,6 +214,8 @@ namespace Backgammon
                 bool hit = false;
                 polygon_light.ImageSource = new BitmapImage( new Uri( @"Grafik/metal-light.jpg", UriKind.Relative ) );
                 polygon_dark.ImageSource = new BitmapImage( new Uri( @"Grafik/metal-dark.jpg", UriKind.Relative ) );
+                home_image.ImageSource = new BitmapImage(new Uri(@"Grafik/wood-border2.jpg", UriKind.Relative));
+               
 
                 for (int i = 0; i < 24; i++)
                 {
@@ -225,6 +257,12 @@ namespace Backgammon
                 {
                     activePlayer._goalReady = true;
                 }
+
+               
+
+                 whiteHome.Background = home_image;
+                blackHome.Background = home_image;
+
                 _pieceSelected.Effect = null;
                 _pieceSelected.Stroke = strokeColor;
                 _pieceSelected = null;
