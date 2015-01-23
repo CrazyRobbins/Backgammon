@@ -101,18 +101,17 @@ namespace Backgammon
             Point pt = e.GetPosition(theCanvas);
             HitTestResult hr = VisualTreeHelper.HitTest(theCanvas, pt);
             Object obj = hr.VisualHit;
-            start = 0;
-            
+
             if (obj is Ellipse && DiceRoll.IsEnabled == false)
             {
                 Ellipse el = (Ellipse)obj;
                 for (int i = 0; i < 24; i++)
                 {
                     var p = e.GetPosition( polygons[i] );
-                    Rect rect = VisualTreeHelper.GetDescendantBounds( polygons[i] );
-                    if (rect.Contains(p))
+                    if (polygons[i].RenderedGeometry.FillContains( p ))
                     {
                         start = i;
+                        break;
                     }
                 }
                 
@@ -135,21 +134,46 @@ namespace Backgammon
                         {
                             if (start - dice1 - dice2 >= 0)
                                 polygons[start - dice1 - dice2].Fill = Brushes.Yellow;
-                            if (start - dice1 >= 0 && dice1 != 0)
+                            if (start - dice1 >= 0)
                                 polygons[start - dice1].Fill = Brushes.Yellow;
-                            if (start - dice2 >= 0 && dice2 != 0)
+                            if (start - dice2 >= 0)
                                 polygons[start - dice2].Fill = Brushes.Yellow;
                         }
                         else
                         {
                             if (start + dice1 + dice2 <= 23)
                                 polygons[start + dice1 + dice2].Fill = Brushes.Yellow;
-                            if (start + dice1 <= 23 && dice1 != 0)
+                            if (start + dice1 <= 23)
                                 polygons[start + dice1].Fill = Brushes.Yellow;
-                            if (start + dice2 <= 23 && dice2 != 0)
+                            if (start + dice2 <= 23)
                                 polygons[start + dice2].Fill = Brushes.Yellow;
                         }
                     }
+
+                    //if (dice1 != 0 && dice2 != 0)
+                    //{
+                    //    if (activePlayer == black)
+                    //        polygon3 = model.lightUp( dice1 + dice2, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, true );
+                    //    else
+                    //        polygon3 = model.lightUp( dice1 + dice2, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, false );
+                    //    polygons[polygon3].Fill = Brushes.Yellow;
+                    //}
+                    //if (dice1 != 0)
+                    //{
+                    //    if (activePlayer == black)
+                    //        polygon1 = model.lightUp( dice1, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, true );
+                    //    else
+                    //        polygon1 = model.lightUp( dice1, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, false );
+                    //    polygons[polygon1].Fill = Brushes.Yellow;
+                    //}
+                    //if (dice2 != 0)
+                    //{
+                    //    if (activePlayer == black)
+                    //        polygon2 = model.lightUp( dice2, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, true );
+                    //    else
+                    //        polygon2 = model.lightUp( dice2, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, false );
+                    //    polygons[polygon2].Fill = Brushes.Yellow;
+                    //}
                 }
             }
         } // Mouse Down
@@ -187,8 +211,7 @@ namespace Backgammon
                     if (polygons[i].Fill == Brushes.Yellow)
                     {
                         var p = e.GetPosition( polygons[i] );
-                        Rect rect = VisualTreeHelper.GetDescendantBounds( polygons[i] );
-                        if (rect.Contains( p ))
+                        if (polygons[i].RenderedGeometry.FillContains( p ))
                         {
                             model.changeArray( newY, newX, _posOfEllipseOnHit.Y, _posOfEllipseOnHit.X, activePlayer );
                             double posX = model.fixPositionX( newX );
@@ -204,8 +227,6 @@ namespace Backgammon
                                         {
                                             dice1 = 0;
                                             dice2 = 0;
-                                            DiceView1.Effect = blur;
-                                            DiceView2.Effect = blur;
                                         }
                                     }
                                     if (dice1 != dice2)
@@ -215,7 +236,6 @@ namespace Backgammon
                                             if (polygons[i] == polygons[start - dice1])
                                             {
                                                 dice1 = 0;
-                                                DiceView1.Effect = blur;
                                             }
                                         }
                                         if (start - dice2 >= 0)
@@ -223,7 +243,6 @@ namespace Backgammon
                                             if (polygons[i] == polygons[start - dice2])
                                             {
                                                 dice2 = 0;
-                                                DiceView2.Effect = blur;
                                             }
                                         }
                                     }
@@ -231,10 +250,7 @@ namespace Backgammon
                                     {
                                         if (start - dice1 >= 0)
                                             if (polygons[i] == polygons[start - dice1])
-                                            {
                                                 dice1 = 0;
-                                                DiceView1.Effect = blur;
-                                            }
                                     }
                                 }
                                 else
@@ -245,8 +261,6 @@ namespace Backgammon
                                         {
                                             dice1 = 0;
                                             dice2 = 0;
-                                            DiceView1.Effect = blur;
-                                            DiceView2.Effect = blur;
                                         }
                                     }
                                     if (dice1 != dice2)
@@ -256,7 +270,6 @@ namespace Backgammon
                                             if (polygons[i] == polygons[start + dice1])
                                             {
                                                 dice1 = 0;
-                                                DiceView1.Effect = blur;
                                             }
                                         }
                                         if (start + dice2 <= 23)
@@ -264,7 +277,6 @@ namespace Backgammon
                                             if (polygons[i] == polygons[start + dice2])
                                             {
                                                 dice2 = 0;
-                                                DiceView2.Effect = blur;
                                             }
                                         }
                                     }
@@ -272,23 +284,20 @@ namespace Backgammon
                                     {
                                         if (start + dice1 >= 0)
                                             if (polygons[i] == polygons[start + dice1])
-                                            {
                                                 dice1 = 0;
-                                                DiceView1.Effect = blur;
-                                            }
                                     }
                                 }
                             }
                         }
-                    if (i % 2 == 0)
-                    {
-                        polygons[i].Fill = polygon_dark;
+                        if (i % 2 == 0)
+                        {
+                            polygons[i].Fill = polygon_dark;
+                        }
+                        else
+                        {
+                            polygons[i].Fill = polygon_light;
+                        }
                     }
-                    else
-                    {
-                        polygons[i].Fill = polygon_light;
-                    }
-                    } 
                 }
                 if (!hit)
                 {
@@ -313,8 +322,6 @@ namespace Backgammon
             DiceView2.Source = new BitmapImage(new Uri(@"Grafik\Dice" + dice2.ToString() + ".png", UriKind.Relative));
             DiceView1.Opacity = 1;
             DiceView2.Opacity = 1;
-            DiceView1.Effect = null;
-            DiceView2.Effect = null;
             DiceRoll.Opacity = 0;
             DiceRoll.IsEnabled = false;
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
@@ -461,8 +468,6 @@ namespace Backgammon
             DiceRoll.Opacity = 1;
             DiceView1.Opacity = 0;
             DiceView2.Opacity = 0;
-            dice1 = 0;
-            dice2 = 0;
 
             blackTurnArrow.Opacity = 1;
             whiteTurnArrow.Opacity = 0;
