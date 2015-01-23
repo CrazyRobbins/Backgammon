@@ -154,9 +154,9 @@
     <Content Include="Grafik\wood-border.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Grafik\wood-border2.jpg">
+    <Content Include="Grafik\wood-border2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="Ljud\roll.wav" />
   </ItemGroup>
   <ItemGroup>

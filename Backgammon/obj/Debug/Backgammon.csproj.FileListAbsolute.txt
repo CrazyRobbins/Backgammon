@@ -96,3 +96,10 @@ C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Grafik\metal-dark.jpg
 C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Grafik\metal-light.jpg
 C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Grafik\wood-border.jpg
 C:\Users\Viktor\Documents\Backgammon\Backgammon\bin\Debug\Grafik\wood-background1.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\piece-black.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\piece-white.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\wood-background1.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\metal-dark.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\metal-light.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\wood-border.jpg
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\wood-border2.jpg
