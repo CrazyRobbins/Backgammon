@@ -209,8 +209,6 @@ namespace Backgammon
 
                     lightdown_pieces();
                     _pieceSelected.Stroke = Brushes.Red;
-                    System.Media.SoundPlayer playerClick2 = new System.Media.SoundPlayer(@"Ljud\ClickOn.wav");
-                    playerClick2.Play();
 
                     if (dice1 != 0 || dice2 != 0)
                     {
@@ -271,48 +269,6 @@ namespace Backgammon
                         {   
                             double posX = model.fixPositionX(newX);
                             Canvas.SetLeft(_pieceSelected, posX);
-<<<<<<< HEAD
-=======
-                            Point click = e.GetPosition(theCanvas);
-                            down = 296;
-                            upp = 0;
-                            switch (activePlayer._laces[i])
-                            {
-                                case 1:
-                                    down = down + 0;
-                                    upp = upp + 0;
-
-                                    break;
-                                case 2:
-                                    down = down - 24;
-                                    upp = upp + 24;
-
-                                    break;
-
-                                case 3:
-                                    down = down - 48;
-                                    upp = upp + 48;
-
-                                    break;
-
-                                case 4:
-                                    down = down - 72;
-                                    upp = upp + 72;
-
-                                    break;
-
-                                case 5:
-                                    down = down - 96;
-                                    upp = upp + 96;
-
-                                    break;
-                                case 6 :
-                                  down = down - 96;
-                                    upp = upp + 96;
-                                    break;
-
-
->>>>>>> e556f0dbe6f3174e3a736f50ca4f4bab46b1a055
 
                             if (activePlayer == black)
                             {
@@ -395,12 +351,7 @@ namespace Backgammon
                 }
                 _pieceSelected.Effect = null;
                 _pieceSelected = null;
-<<<<<<< HEAD
                 
-=======
-                System.Media.SoundPlayer playerClick = new System.Media.SoundPlayer(@"Ljud\ClickOn.wav");
-                playerClick.Play();
->>>>>>> e556f0dbe6f3174e3a736f50ca4f4bab46b1a055
             }
             lightup_pieces();
         } // Mouse Up
@@ -417,14 +368,9 @@ namespace Backgammon
             DiceView2.Effect = null;
             DiceRoll.Opacity = 0;
             DiceRoll.IsEnabled = false;
-<<<<<<< HEAD
             lightup_pieces();
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
             //player.Play();
-=======
-            System.Media.SoundPlayer pla = new System.Media.SoundPlayer(@"Ljud\roll.wav");
-            pla.Play();
->>>>>>> e556f0dbe6f3174e3a736f50ca4f4bab46b1a055
         } // diceRoll
 
         private void changePlayer()
