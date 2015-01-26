@@ -131,6 +131,8 @@ namespace Backgammon
 
                     strokeColor = _pieceSelected.Stroke;
                     _pieceSelected.Stroke = Brushes.Red;
+                    System.Media.SoundPlayer playerClick2 = new System.Media.SoundPlayer(@"Ljud\ClickOn.wav");
+                    playerClick2.Play();
 
                     if (dice1 != 0 || dice2 != 0)
                     {
@@ -197,7 +199,7 @@ namespace Backgammon
                             double posX = model.fixPositionX(newX);
                             Canvas.SetLeft(_pieceSelected, posX);
                             Point click = e.GetPosition(theCanvas);
-                            down = 295;
+                            down = 296;
                             upp = 0;
                             switch (activePlayer._laces[i])
                             {
@@ -207,8 +209,8 @@ namespace Backgammon
 
                                     break;
                                 case 2:
-                                    down = down - 25;
-                                    upp = upp + 25;
+                                    down = down - 24;
+                                    upp = upp + 24;
 
                                     break;
 
@@ -219,17 +221,20 @@ namespace Backgammon
                                     break;
 
                                 case 4:
-                                    down = down - 75;
+                                    down = down - 72;
                                     upp = upp + 72;
 
                                     break;
 
                                 case 5:
-                                    down = down - 95;
-                                    upp = upp + 97;
+                                    down = down - 96;
+                                    upp = upp + 96;
 
                                     break;
-
+                                case 6 :
+                                  down = down - 96;
+                                    upp = upp + 96;
+                                    break;
 
 
 
@@ -363,6 +368,8 @@ namespace Backgammon
                 _pieceSelected.Effect = null;
                 _pieceSelected.Stroke = strokeColor;
                 _pieceSelected = null;
+                System.Media.SoundPlayer playerClick = new System.Media.SoundPlayer(@"Ljud\ClickOn.wav");
+                playerClick.Play();
             }
         } // Mouse Up
 
@@ -378,8 +385,8 @@ namespace Backgammon
             DiceView2.Effect = null;
             DiceRoll.Opacity = 0;
             DiceRoll.IsEnabled = false;
-            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
-            //player.Play();
+            System.Media.SoundPlayer pla = new System.Media.SoundPlayer(@"Ljud\roll.wav");
+            pla.Play();
         } // diceRoll
 
         private void changePlayer()

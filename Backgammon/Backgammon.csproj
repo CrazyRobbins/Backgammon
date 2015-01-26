@@ -107,6 +107,7 @@
     <Resource Include="Grafik\background.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Grafik\diceBackground.jpg" />
     <Content Include="Grafik\piece-black.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -157,7 +158,12 @@
     <Content Include="Grafik\wood-border2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Ljud\roll.wav" />
+    <Content Include="Ljud\ClickOn.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ljud\roll.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Backgammon.Theme\Backgammon.Theme.csproj">

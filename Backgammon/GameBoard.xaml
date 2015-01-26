@@ -266,7 +266,8 @@
                 </Grid>
             </Grid>
 
-            <Button x:Name="DiceRoll" Click="diceRoll" Width="50" Height="20" Canvas.Right="25" Canvas.Top="150">Roll Dice</Button>
+            <Button  x:Name="DiceRoll" Click="diceRoll" Width="50" Height="20" Canvas.Right="25" Canvas.Top="150">Roll 
+                                 </Button>
             <Button Name="menu_button" Height="20" Width="50" Canvas.Top="150" Canvas.Left="65" Click="menu_action">Menu</Button>
         </Canvas>
 
