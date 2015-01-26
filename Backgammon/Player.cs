@@ -12,6 +12,7 @@ namespace Backgammon
         public int _bricksAmount;
         public int _out;
         public bool _goalReady;
+        public bool active;
 
         public Player()
         {
@@ -19,6 +20,7 @@ namespace Backgammon
             _bricksAmount = 15;
             _out = 0;
             _goalReady = false;
+            active = false;
         }
 
     }

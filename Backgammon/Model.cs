@@ -11,7 +11,7 @@ namespace Backgammon
         //private bool _d1 = false;
         //private bool _d2 = false;
         Random rnd = new Random();
-        private int [] pointX = new int[24];
+        public int [] pointX = new int[24];
 
         public Model()
         { 
