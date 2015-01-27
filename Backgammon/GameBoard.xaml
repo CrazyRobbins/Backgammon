@@ -265,9 +265,12 @@
                     </Grid>
                 </Grid>
             </Grid>
+            <Button Name="Btn_sound" Click="btn_Off" Height="20" Width="20" Canvas.Right="2">
+                <Image Source="Grafik/noSound.png" Stretch="Fill"></Image>
+            </Button>
 
             <Button x:Name="DiceRoll" Click="diceRoll" Width="50" Height="20" Canvas.Right="25" Canvas.Top="150">Roll Dice</Button>
-            <Button Name="menu_button" Height="20" Width="50" Canvas.Top="150" Canvas.Left="65" Click="menu_action">Menu</Button>
+            <Button Name="menu_button" MouseEnter="Mouse_enter_menu" MouseLeave="Mouse_leave_Menu" Height="20" Width="50" Canvas.Top="150" Canvas.Left="65" Click="menu_action">Menu</Button>
         </Canvas>
 
         <Grid Name="menuGrid" Width="490" Height="320">

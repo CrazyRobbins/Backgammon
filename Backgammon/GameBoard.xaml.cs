@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Effects;
+using System.Windows.Media.Animation;
 
 namespace Backgammon
 {
@@ -34,6 +35,9 @@ namespace Backgammon
         int _totalChildren = 0;
         int oldAmount = 0;
         TextBlock numberOfPieces;
+        System.Media.SoundPlayer music = new System.Media.SoundPlayer(@"Ljud\musik.wav");
+        bool cheack;
+
 
         private int down, upp;
 
@@ -68,6 +72,7 @@ namespace Backgammon
 
         public GameBoard()
         {
+            playMusic();
             App.Current.Activated += Active;
             App.Current.Deactivated += DeActive;
             InitializeComponent();
@@ -597,8 +602,8 @@ namespace Backgammon
             DiceRoll.Opacity = 0;
             DiceRoll.IsEnabled = false;
             lightup_pieces();
-            //System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
-            //player.Play();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Ljud\roll.wav");
+            player.Play();
         } // diceRoll
 
         private void changePlayer()
@@ -805,6 +810,45 @@ namespace Backgammon
             menuGrid.IsEnabled = true;
             menuGrid.Opacity = 1;
         } // menu_action
+
+        private void playMusic()
+        {
+            music.PlayLooping();
+            cheack = true;
+        }
+        private void btn_Off(object sender, RoutedEventArgs e)
+        {
+            if (cheack == true)
+            {
+                Image img = new Image();
+                Uri uri = new Uri(@"Grafik/sound.png", UriKind.Relative);
+                ImageSource imgSource = new BitmapImage(uri);
+                img.Source = imgSource;
+                Btn_sound.Content = img;
+                music.Stop();
+                cheack = false;
+            }
+            else
+            {
+                Image img1 = new Image();
+                music.PlayLooping();
+                Uri uri = new Uri(@"Grafik/noSound.png", UriKind.Relative);
+                ImageSource imgSource = new BitmapImage(uri);
+                img1.Source = imgSource;
+                Btn_sound.Content = img1;
+                cheack = true;
+            }
+        }
+        private void Mouse_leave_Menu(object sender, MouseEventArgs e)
+        {
+            DoubleAnimation Anim = new DoubleAnimation(0.2, TimeSpan.FromSeconds(2));
+            menu_button.BeginAnimation(Button.OpacityProperty, Anim);
+        }
+        private void Mouse_enter_menu(object sender, MouseEventArgs e)
+        {
+            DoubleAnimation Anim = new DoubleAnimation(1, TimeSpan.FromSeconds(2));
+            menu_button.BeginAnimation(Button.OpacityProperty, Anim);
+        }
     }
 }
 

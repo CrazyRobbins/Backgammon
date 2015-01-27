@@ -167,3 +167,8 @@ C:\Users\Axel Nyberg\Documents\backamon bakcup\Backgammon\Backgammon\obj\Debug\M
 C:\Users\Axel Nyberg\Documents\backamon bakcup\Backgammon\Backgammon\obj\Debug\Backgammon.g.resources
 C:\Users\Axel Nyberg\Documents\backamon bakcup\Backgammon\Backgammon\obj\Debug\Backgammon.Properties.Resources.resources
 C:\Users\Axel Nyberg\Documents\backamon bakcup\Backgammon\Backgammon\obj\Debug\Backgammon.csproj.GenerateResource.Cache
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Ljud\ClickOn.wav
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Ljud\musik.wav
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Ljud\roll.wav
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\noSound.png
+C:\Users\Axel Nyberg\Documents\GitHub\Backgammon\Backgammon\bin\Debug\Grafik\sound.png
